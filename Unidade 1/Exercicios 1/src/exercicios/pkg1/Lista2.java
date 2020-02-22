@@ -1,11 +1,59 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+1) Faça um programa em Java que mostre para o usuário todos os números entre 
+-100 e 100 que não sejam múltiplos de 3 e 5.
+
+ 
+
+2) Faça um programa em Java que receba do usuário uma palavra e mostre a 
+quantidade de letras naquela palavra e a própria palavra invertida.
+
+ 
+
+3) Faça um programa em Java que receba do usuário uma palavra e diga se aquela 
+palavra é ou não um palíndromo (pode ser lida igualmente da direita para a 
+esquerda e da esquerda para a direita).
+
+ 
+
+4) Faça um programa em Java que receba do usuário um número e diga se aquele 
+número é ou não primo (números que apenas são divisíveis por um e por eles 
+mesmos).
+
+ 
+
+5) Altere o programa do exercício anterior para ficar recebendo o número dentro
+de um laço enquanto o número for diferente de 0 (zero).
+
+ 
+
+6) Crie um programa que peça 10 números inteiros e apresente: a média, o maior e
+o menor.
+
+ 
+
+7) Implemente um programa que recebe repetidamente um número de 1 a 12, enquanto
+esse número for diferente de 0 (zero), e imprime o mês correspondente. Quando o 
+número estiver fora do intervalo permitido, a mensagem “mês inválido” deverá ser
+exibida.
+
+ 
+
+8) Escreva um programa que imprima na tela a soma dos números ímpares entre 1 e 
+30 e a multiplicação dos números pares entre 1 e 20.
+
+ 
+
+9) Escreva um programa que percorra dois laços de 0 a 10, um interno ao outro, 
+imprimindo os contadores, e quando estes forem iguais, o programa deve passar à 
+próxima interação do laço mais externo, caso contrário, deve imprimir os valores
+dos contadores dos dois laços.
+
+
  */
 package exercicios.pkg1;
 import static exercicios.pkg1.Lista1.teclado;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,45 +77,37 @@ public class Lista2 {
         System.out.print("Digite a opção selecionada: ");
         int opcao = teclado.nextInt();
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-        if (opcao==1)
-        {
-            exercicio01();
-        }
-        else if (opcao==2)
-        {
-            exercicio02();
-        }
-        else if (opcao==3)
-        {
-            exercicio03();
-        }
-        else if (opcao==4)
-        {
-            exercicio04();
-        }
-        else if (opcao==5)
-        {
-            exercicio05();
-        }
-        else if (opcao==6)
-        {
-            exercicio06();
-        }
-        else if (opcao==7)
-        {
-            exercicio07();
-        }
-        else if (opcao==8)
-        {
-            exercicio08();
-        }
-        else if (opcao==9)
-        {
-            exercicio09();
-        }
-        else
-        {
-            System.out.println("Opção Invalida");
+        switch (opcao) {
+            case 1:
+                exercicio01();
+                break;
+            case 2:
+                exercicio02();
+                break;
+            case 3:
+                exercicio03();
+                break;
+            case 4:
+                exercicio04();
+                break;
+            case 5:
+                exercicio05();
+                break;
+            case 6:
+                exercicio06();
+                break;
+            case 7:
+                exercicio07();
+                break;
+            case 8:
+                exercicio08();
+                break;
+            case 9:
+                exercicio09();
+                break;
+            default:
+                System.out.println("Opção Invalida");
+                break;
         }
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
     
@@ -77,11 +117,7 @@ public class Lista2 {
     private static void exercicio01() {
         for ( int i = -100; i <= 100; i++)
         {   
-            if((i % 5)== 0 || 0 == (i % 3))
-            {
-            
-            }
-            else
+            if(0!= (i % 5) && 0 != (i % 3))
             {
                 System.out.print(i+" ");
             }
@@ -90,8 +126,7 @@ public class Lista2 {
     }
 
     private static void exercicio02() {
-        System.out.print("Digite uma palavra: ");
-        String nome = teclado.next();
+        String nome = JOptionPane.showInputDialog("Digite uma palavra: ");
         char[] letras = null;
         letras = nome.toCharArray();
         int len = nome.length();
@@ -111,7 +146,7 @@ public class Lista2 {
         int len = nome.length();
         String invertida = new StringBuilder(nome).reverse().toString();
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-        if (nome == null ? invertida == null : nome.equals(invertida))
+        if (nome.equals(invertida))
         {
             System.out.println("As palavras são palindrono");
         }
@@ -122,25 +157,29 @@ public class Lista2 {
     }
 
     private static void exercicio04() {
-        System.out.print("Digite um numero inteiro positivo e eu falo se é primo ou n: ");
-        double numero = teclado.nextDouble();
-        for(double i=2; i < numero; i++)
+        
+        String palavra = JOptionPane.showInputDialog("\"Digite um numero inteiro positivo e eu falo se é primo ou n: \"");
+        int numero = Integer.parseInt(palavra);
+        if (numero != 2 && numero % 2 == 0 )
+        {
+            System.out.println("Este numero não é primo!");
+            return;
+        }
+        int contador = 0;
+        for(int i = 1; i<=numero; i++)
         {   
-            
-            if ((numero % i) == 0)
+            if(numero % i == 0)
             {
-                System.out.println("Numero não é primo!");
-                break;
+                contador++;
             }
-            else if ((numero == 1) || (numero == 0))
-            {
-                System.out.println("Numero primo");
-            }
-            else
-            {
-                System.out.println("Numero primo!");
-                break;
-            }
+        }
+        if(contador>2)
+        {
+            System.out.println("Esse numero não é primo!");
+        }
+        else
+        {
+            System.out.println("Numero primo!");
         }
     }
 
@@ -161,19 +200,33 @@ public class Lista2 {
 
     private static void exercicio06() {
         System.out.println("Calculadora de media: ");
-        int numero =0;
+        int[] numero =new int[10];
         int soma = 0;
-        for(int i = 1; i <=10; i++)
+        int maior = 0;
+        int menor = 0;
+        for(int i = 0; i <= numero.length - 1; i++)
         {
             
             System.out.print("Digite o "+ i +"º valor: ");
-            numero = teclado.nextInt();
-            soma = soma + numero;
+            numero[i] = teclado.nextInt();
+            soma = soma + numero[i];
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            if( i == 0 || maior <= numero[i])
+            {
+                maior= numero[i];
+            }
+
+            if(i == 0 || menor >= numero[i])
+            {
+                menor = numero[i];
+            }
         }
+
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         int media = (soma/10);
         System.out.println("A media é: "+ media);
+        System.out.println("O maior numero digitado: "+ maior);
+        System.out.println("O menor numero digitado: "+ menor);
         
     }
 
@@ -191,16 +244,21 @@ public class Lista2 {
                                  "Outubro",
                                  "Novembro",
                                  "Dezenbro"};
-        for(int i=0;i<9999; i++)
+      while (true)
         {
-            if(i<13)
-            {
-                System.out.println(listaDeMeses[i]);
-            }
-            else
-            {
-                System.out.println("mes invalido!");
-            }
+           int mes = teclado.nextInt();
+           if (mes == 0)
+           {
+               return;
+           }
+           else if (mes < 13 && mes > 0)
+           {
+               System.out.println(listaDeMeses[mes]);
+           }
+           else
+           {
+               System.out.println("Mes invalido");
+           }               
         }
     }
 
@@ -209,9 +267,9 @@ public class Lista2 {
         double multi = 1;
         for(double i = 1; i <= 30; i++)
         {
-            if ((i % 2) == 0)
+            if ((i % 2) != 0)
             {
-                soma = soma + i;
+                soma +=  i;
             }
             else
             {
@@ -221,8 +279,8 @@ public class Lista2 {
                 }
             }
         }
-        System.out.println("Soma dos valores pares até 30 = " + soma);
-        System.out.println("A multiplicação dos valores impares até 20 = "+multi);
+        System.out.println("Soma dos valores impares até 30 = " + soma);
+        System.out.println("A multiplicação dos valores pares até 20 = "+multi);
     }
 
     private static void exercicio09() {
