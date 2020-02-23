@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex05">
+  <ClassDiagramComponents>
+    <Class name="Carro_jogo" package="" visibility="public" xPosition="125.0" yPosition="250.0">
+      <Fields>
+        <Field name="Nome" type="String" visibility="private"/>
+        <Field name="Cor" type="String" visibility="private"/>
+        <Field name="Aceleracao" type="int" visibility="private"/>
+        <Field name="velocidadeMaxima" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="direita" returnType="void" visibility="public"/>
+        <Method name="esquerda" returnType="void" visibility="public"/>
+        <Method name="acelera" returnType="void" visibility="public"/>
+        <Method name="Freia" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

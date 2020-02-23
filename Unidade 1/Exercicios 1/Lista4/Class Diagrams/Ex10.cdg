@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex10">
+  <ClassDiagramComponents>
+    <Class name="Curso" package="" visibility="public" xPosition="151.0" yPosition="160.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="Conteudo" type="Object" visibility="private"/>
+        <Field name="duracao" type="int" visibility="private"/>
+        <Field name="titulo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="ingrecar" returnType="void" visibility="public"/>
+        <Method name="concluir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

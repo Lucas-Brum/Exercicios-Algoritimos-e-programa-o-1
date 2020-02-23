@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex04">
+  <ClassDiagramComponents>
+    <Class name="Carro" package="" visibility="public" xPosition="183.0" yPosition="173.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="Potencia" type="int" visibility="private"/>
+        <Field name="cor" type="String" visibility="private"/>
+        <Field name="preco" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cadatrar" returnType="void" visibility="public"/>
+        <Method name="promocao" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

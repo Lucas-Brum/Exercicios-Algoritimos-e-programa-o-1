@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex07">
+  <ClassDiagramComponents>
+    <Class name="Endereço" package="" visibility="public" xPosition="57.0" yPosition="150.0">
+      <Fields>
+        <Field name="Rua" type="String" visibility="private"/>
+        <Field name="bairro" type="String" visibility="private"/>
+        <Field name="cidade" type="String" visibility="private"/>
+        <Field name="pais" type="String" visibility="private"/>
+        <Field name="Numero" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="entregue" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

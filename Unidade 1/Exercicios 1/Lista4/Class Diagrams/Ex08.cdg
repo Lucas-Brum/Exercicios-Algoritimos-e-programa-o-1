@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex08">
+  <ClassDiagramComponents>
+    <Class name="Produto" package="" visibility="public" xPosition="163.0" yPosition="368.0">
+      <Fields>
+        <Field name="Genero" type="String" visibility="private"/>
+        <Field name="tamanho" type="int" visibility="private"/>
+        <Field name="preco" type="float" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Promocao" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

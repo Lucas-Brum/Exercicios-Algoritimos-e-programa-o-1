@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex06">
+  <ClassDiagramComponents>
+    <Class name="Animal" package="" visibility="public" xPosition="112.0" yPosition="125.0">
+      <Fields>
+        <Field name="reino" type="String" visibility="private"/>
+        <Field name="Especie" type="String" visibility="private"/>
+        <Field name="Alimentacao" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="alimentar" returnType="void" visibility="public"/>
+        <Method name="Vacinacao" returnType="void" visibility="public"/>
+        <Method name="cadastrar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

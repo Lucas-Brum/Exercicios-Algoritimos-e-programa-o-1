@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex02">
+  <ClassDiagramComponents>
+    <Class name="Hora" package="" visibility="public" xPosition="114.0" yPosition="366.0">
+      <Fields>
+        <Field name="programa" type="Programas[]" visibility="private"/>
+        <Field name="tipo" type="Tipos[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cadastrar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Conteudo" package="" visibility="public" xPosition="115.0" yPosition="87.0">
+      <Fields>
+        <Field name="publicoAlvo" type="String" visibility="private"/>
+        <Field name="origem" type="String" visibility="private"/>
+        <Field name="hora" type="Horario[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Programa" package="" visibility="public" xPosition="384.0" yPosition="347.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="atores" type="String[]" visibility="private"/>
+        <Field name="duracao" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="exibir" returnType="void" visibility="public"/>
+        <Method name="reprise" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="conteudo" source="Conteudo" target="Hora" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Hora" source="Hora" target="Programa" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

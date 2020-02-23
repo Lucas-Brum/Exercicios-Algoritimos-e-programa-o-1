@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex03">
+  <ClassDiagramComponents>
+    <Class name="Personagem" package="" visibility="public" xPosition="203.0" yPosition="229.0">
+      <Fields>
+        <Field name="Nickname" type="String" visibility="private"/>
+        <Field name="vida" type="int" visibility="private"/>
+        <Field name="experiencia" type="Int" visibility="private"/>
+        <Field name="mana" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="golpes" returnType="void" visibility="public"/>
+        <Method name="magias" returnType="void" visibility="public"/>
+        <Method name="dano" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

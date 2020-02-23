@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex01">
+  <ClassDiagramComponents>
+    <Class name="Pessoa" package="" visibility="public" xPosition="15.0" yPosition="44.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="CPF" type="String" visibility="private"/>
+        <Field name="dataNascimento" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cadastrar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cursos" package="" visibility="public" xPosition="463.0" yPosition="44.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="duracao" type="int" visibility="private"/>
+        <Field name="disciplinas" type="Disciplinas[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cadastro" returnType="void" visibility="public"/>
+        <Method name="Aprovacao" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Professor" package="" visibility="public" xPosition="15.0" yPosition="526.0">
+      <Fields>
+        <Field name="chapa" type="String" visibility="private"/>
+        <Field name="salario" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="lancarNota" returnType="void" visibility="public"/>
+        <Method name="lancarChamada" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Aluno" package="" visibility="public" xPosition="234.0" yPosition="44.0">
+      <Fields>
+        <Field name="ra" type="String" visibility="private"/>
+        <Field name="semestre" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="EntregarAtividades" returnType="void" visibility="public"/>
+        <Method name="realizarMatricula" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Diciplinas" package="" visibility="public" xPosition="453.0" yPosition="526.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="duracao" type="Int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Turma" package="" visibility="public" xPosition="224.0" yPosition="526.0">
+      <Fields>
+        <Field name="professor" type="Professor" visibility="private"/>
+        <Field name="alunos" type="Aluno[]" visibility="private"/>
+        <Field name="disciplinas" type="Diciplina" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Professor" source="Turma" target="Professor" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Aluno" target="Pessoa"/>
+    <HasRelation name="curso" source="Aluno" target="Cursos" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Disciplina" source="Diciplinas" target="Turma" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="disciplinas" source="Cursos" target="Diciplinas" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="alunas" source="Turma" target="Aluno" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Professor" target="Pessoa"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

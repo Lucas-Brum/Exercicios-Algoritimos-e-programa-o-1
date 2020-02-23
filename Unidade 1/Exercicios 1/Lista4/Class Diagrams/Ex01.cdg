@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex01">
+  <ClassDiagramComponents>
+    <Class name="Pessoa" package="" visibility="public" xPosition="247.0" yPosition="151.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="Fotos" type="Strings[]" visibility="private"/>
+        <Field name="estadoCivil" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="escreverPostagem" returnType="void" visibility="public"/>
+        <Method name="alterarNome" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

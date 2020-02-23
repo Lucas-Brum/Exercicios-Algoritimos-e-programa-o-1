@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ex02">
+  <ClassDiagramComponents>
+    <Class name="Pessoa" package="" visibility="public" xPosition="46.0" yPosition="82.0">
+      <Fields>
+        <Field name="Nome" type="String" visibility="private"/>
+        <Field name="Nota" type="float" visibility="private"/>
+        <Field name="id" type="double" visibility="private"/>
+        <Field name="foto" type="Strinf" visibility="private"/>
+        <Field name="tipo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="presencaAulas" returnType="void" visibility="public"/>
+        <Method name="Provas" returnType="void" visibility="public"/>
+        <Method name="realizarmatriculas" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
