@@ -54,7 +54,7 @@ package exercicios.pkg1;
 import static exercicios.pkg1.Lista1.teclado;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-
+ 
 /**
  *
  * @author lucas
@@ -63,20 +63,26 @@ public class Lista2 {
     static Scanner teclado = new Scanner (System.in);
     public static void main(String[] args) 
     {
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+                + "-=-");
         System.out.println("Escolha uma opçao: ");
-        System.out.println("1 - Numeros de -100 até 100 sem os multiplos de 3 e 5:");
-        System.out.println("2 - Conta a quantidade de letras em uma palavra e inverte elá:");
-        System.out.println("3 - Verifica se a palavra é um palindrono: (Fiz mas não entendi haha)");
+        System.out.println("1 - Numeros de -100 até 100 sem os multiplos de 3 "
+                + "e 5:");
+        System.out.println("2 - Conta a quantidade de letras em uma palavra e"
+                + " inverte elá:");
+        System.out.println("3 - Verifica se a palavra é um palindrono: (Fiz "
+                + "mas não entendi haha)");
         System.out.println("4 - Verifica se o numero é primo: ");
         System.out.println("5 - Repeti até escrever o o: ");
         System.out.println("6 - Verifica a media de 10 numeros");
-        System.out.println("7 - Verifica o mes do ano correpondente ao numero:");
+        System.out.println("7 - Verifica o mes do ano correpondente ao "
+                + "numero:");
         System.out.println("8 - Soma pares 1/30 e pares 1/20");
         System.out.println("9 - Não imprime os j iguais aos i");
         System.out.print("Digite a opção selecionada: ");
         int opcao = teclado.nextInt();
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+                + "=-=-");
         switch (opcao) {
             case 1:
                 exercicio01();
@@ -109,7 +115,8 @@ public class Lista2 {
                 System.out.println("Opção Invalida");
                 break;
         }
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+                + "-=-");
     
     
     }
@@ -145,7 +152,8 @@ public class Lista2 {
         String nome = teclado.next();
         int len = nome.length();
         String invertida = new StringBuilder(nome).reverse().toString();
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+                + "-=-");
         if (nome.equals(invertida))
         {
             System.out.println("As palavras são palindrono");
@@ -158,7 +166,8 @@ public class Lista2 {
 
     private static void exercicio04() {
         
-        String palavra = JOptionPane.showInputDialog("\"Digite um numero inteiro positivo e eu falo se é primo ou n: \"");
+        String palavra = JOptionPane.showInputDialog("\"Digite um numero "
+                + "inteiro positivo e eu falo se é primo ou n: \"");
         int numero = Integer.parseInt(palavra);
         if (numero != 2 && numero % 2 == 0 )
         {
@@ -210,7 +219,8 @@ public class Lista2 {
             System.out.print("Digite o "+ i +"º valor: ");
             numero[i] = teclado.nextInt();
             soma = soma + numero[i];
-            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+                    + "=-=-=-=-");
             if( i == 0 || maior <= numero[i])
             {
                 maior= numero[i];
@@ -222,7 +232,8 @@ public class Lista2 {
             }
         }
 
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+                + "-=-=-");
         int media = (soma/10);
         System.out.println("A media é: "+ media);
         System.out.println("O maior numero digitado: "+ maior);
