@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Biblioteca">
+  <ClassDiagramComponents>
+    <Class name="Biblioteca" package="" visibility="public" xPosition="506.0" yPosition="338.0">
+      <Fields>
+        <Field name="livros" type="livro[]" visibility="private"/>
+        <Field name="pessoas" type="Pessoas[]" visibility="private"/>
+        <Field name="CNPJ" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Pesquisar" returnType="Livro[]" visibility="public"/>
+        <Method name="pesquisar" returnType="livro" visibility="public"/>
+        <Method name="cadastrarLivro" returnType="void" visibility="public"/>
+        <Method name="emprestarLivro" returnType="void" visibility="public"/>
+        <Method name="devolverLivro" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Livro" package="" visibility="public" xPosition="81.0" yPosition="338.0">
+      <Fields>
+        <Field name="disponivel" type="bool" visibility="private"/>
+        <Field name="autor" type="String" visibility="private"/>
+        <Field name="titulo" type="String" visibility="private"/>
+        <Field name="codigo" type="int" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Principal" package="" visibility="public" xPosition="506.0" yPosition="60.0">
+      <Fields>
+        <Field name="biblioteca" type="Biblioteca" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="exibirMenu" returnType="void" visibility="public"/>
+        <Method name="cadastrar" returnType="void" visibility="public"/>
+        <Method name="pesquisar" returnType="void" visibility="public"/>
+        <Method name="emprestar" returnType="void" visibility="public"/>
+        <Method name="devolver" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Principal" source="Principal" target="Biblioteca" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="livros" source="Biblioteca" target="Livro" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -12,7 +12,7 @@ package exercicios.pkg1;
 public class Lista4 {
     public static void main(String[] args)
     {
-        
+
     }
     public class Pessoa
     {

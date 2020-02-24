@@ -25,7 +25,8 @@ public class Lista1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+                           + "=-");
         System.out.println("Escolha uma opçao: ");
         System.out.println("1 - Comparador de peso e altura:");
         System.out.println("2 - Contador Regressivo até 0:");
@@ -54,18 +55,23 @@ public class Lista1 {
     }
      private static void exercicio01()
     {
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-        System.out.println("APP que verifica peso e altura e detemina \nquem é mais alto e quem é mais baixo");
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+                            + "=-");
+        System.out.println("APP que verifica peso e altura e detemina \nquem é "
+                            + "mais alto e quem é mais baixo");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+                            + "=-");
         System.out.print("Digite seu nome: ");
         String nome1 = teclado.next();
         System.out.print("Digite seu peso em Kg: ");
         int peso1 = teclado.nextInt();
         System.out.print("Digite sua altura em cm: ");
         int altura1 = teclado.nextInt();
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+                            + "=-");
         System.out.println("Nova pessoa: ");
-        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+                            + "-=-");
         System.out.print("Digite seu nome: ");
         String nome2 = teclado.next();
         System.out.print("Digite seu peso em Kg: ");

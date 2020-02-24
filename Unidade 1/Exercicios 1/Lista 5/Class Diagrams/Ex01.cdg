@@ -13,7 +13,7 @@
         <Method name="cadastrar" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Cursos" package="" visibility="public" xPosition="463.0" yPosition="44.0">
+    <Class name="Cursos" package="" visibility="public" xPosition="480.0" yPosition="44.0">
       <Fields>
         <Field name="nome" type="String" visibility="private"/>
         <Field name="duracao" type="int" visibility="private"/>
@@ -67,11 +67,11 @@
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <HasRelation name="Professor" source="Turma" target="Professor" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="Aluno" target="Pessoa"/>
-    <HasRelation name="curso" source="Aluno" target="Cursos" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="Disciplina" source="Diciplinas" target="Turma" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="disciplinas" source="Cursos" target="Diciplinas" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
     <HasRelation name="alunas" source="Turma" target="Aluno" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
     <IsRelation name="is" source="Professor" target="Pessoa"/>
+    <HasRelation name="disciplinas" source="Cursos" target="Diciplinas" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="curso" source="Aluno" target="Cursos" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Aluno" target="Pessoa"/>
   </ClassDiagramRelations>
 </ClassDiagram>
