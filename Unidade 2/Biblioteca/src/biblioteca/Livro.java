@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Biblioteca;
+package biblioteca;
+
 /**
  *
- * @author lucas
+ * @author Lucas Brum
  */
 public class Livro {
+    
     int codigo;
     String titulo;
     String autor;
@@ -19,7 +21,7 @@ public class Livro {
         
     }
     
-    public Livro(int codigo, String titulo,String autor, String genero, boolean disponivel ){
+    public Livro(int codigo, String titulo, String autor, String genero, boolean disponivel){
         this.codigo = codigo;
         this.titulo = titulo;
         this.autor = autor;
