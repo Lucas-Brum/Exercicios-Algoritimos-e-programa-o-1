@@ -101,6 +101,7 @@ public class Principal {
         int opcao = teclado.nextInt();
         teclado.nextLine();
         System.out.println("-=-=-=-=-=-=-=-=-=-=-");
+        
         if(opcao == 1){
             System.out.println("Digite o titulo do livro:");
             String titulo = teclado.nextLine();
