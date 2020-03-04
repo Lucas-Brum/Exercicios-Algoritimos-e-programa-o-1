@@ -20,14 +20,24 @@ public class Biblioteca {
     public Biblioteca(int capacidade){
        midias = new Midia[capacidade];
     }
+    private String normalizarPesquisa(String texto){
+        
+       
+        return texto.toLowerCase().replaceAll("áàâã", "a")
+                                  .replaceAll("éê", "e")
+                                  .replace("í", "i")
+                                  .replaceAll("óôõ", "o")
+                                  .replace("ú", "u")
+                                  .replaceAll("[^\\w]", " ");
+    }
     public Midia[] pesquisar(String titulo){
         if(titulo == null || titulo.equals("")){
             return midias;
         }
         Livro[] aux = new Livro[midias.length];
-        titulo = titulo.toLowerCase();
+        titulo = normalizarPesquisa(titulo);
         for (int i = 0; i < midias.length; i++) {
-            if(midias[i] != null && midias[i].getTitulo().toLowerCase().contains(titulo) ){
+            if(midias[i] != null && normalizarPesquisa(midias[i].getTitulo()).toLowerCase().contains(titulo) ){
                 aux[i]=(Livro) midias[i];
             }
         }
