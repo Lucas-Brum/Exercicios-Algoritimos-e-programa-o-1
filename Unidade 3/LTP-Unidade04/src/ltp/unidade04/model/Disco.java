@@ -23,4 +23,17 @@ public class Disco extends Midia{
         this.formato = formato;
     }
     
+    public void setDuracao(int duracao){
+        this.duracao = duracao;
+    }
+    public void setFormato(String formato) {
+        this.formato = formato;
+    }
+    
+    @Override
+    public String toString(){
+        String texto = super.toString();
+        return texto+ " - "+ this.duracao+ "min.";
+    }
+    
 }

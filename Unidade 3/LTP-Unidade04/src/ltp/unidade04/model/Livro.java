@@ -21,12 +21,17 @@ public class Livro extends Midia {
     public Livro(int codigo, String titulo, String autor, String genero, boolean disponivel, int paginas, String editor){
         super(codigo, titulo, autor, genero, disponivel);
         this.paginas = paginas;
-        this.editora = editora;
+        this.editora = editor;
     }
     public void setPaginas(int paginas){
         this.paginas = paginas;
     }
     public void setEditora(String editora){
         this.editora = editora;
+    }
+    @Override
+    public String toString(){
+        String texto = super.toString();
+        return texto+ " - Ed. "+ this.editora;
     }
 }

@@ -5,8 +5,11 @@
  */
 package ltp.unidade04.control;
 
+import ltp.unidade04.model.Disco;
+import ltp.unidade04.model.Genero;
 import ltp.unidade04.model.Livro;
 import ltp.unidade04.model.Midia;
+import ltp.unidade04.model.Revista;
 
 /**
  *
@@ -28,6 +31,7 @@ public class Biblioteca {
                                   .replace("í", "i")
                                   .replaceAll("óôõ", "o")
                                   .replace("ú", "u")
+                                  .replace("ç","c")
                                   .replaceAll("[^\\w]", " ");
     }
     public Midia[] pesquisar(String titulo){
@@ -46,32 +50,36 @@ public class Biblioteca {
     public Midia pesquisar(int codigo){
         for (int i = 0; i < midias.length; i++) {
             if(midias[i] != null && midias[i].getCodigo() == codigo){
-                return (Livro) midias[i];
+                return (Midia) midias[i];
             }
         }
         return null;
     }
-    String converterGenero(int genero){
-        switch(genero){
-            case 1: return "Romance";
-            case 2: return "Aventura";
-            case 3: return "Não-Ficação";
-            default: return null;
-        }
-    }
-    public boolean cadastrarLivro(String titulo, String autor, int genero, int paginas, String editora){
-        Livro livro = new Livro(proximoCodigo, titulo, autor,converterGenero(genero) , true, paginas, editora);
-        
-        for (int i = 0; i < midias.length; i++) {
+    
+    private boolean cadastrar(Midia midia){
+       for (int i = 0; i < midias.length; i++) {
             
             if(midias[i]==null){
                 
-                midias[i] = livro;
+                midias[i] = midia;
                 proximoCodigo++;
                 return true;
             }
         }
-        return false;
+        return false; 
+    }
+    
+    public boolean cadastrarLivro(String titulo, String autor, int genero, int paginas, String editora){
+        Livro livro = new Livro(proximoCodigo, titulo, autor,Genero.getGenero(genero) , true, paginas, editora);
+        return cadastrar(livro);  
+    }
+    public boolean cadastrarRevista(String titulo,String autor, int genero, String materias, String dataLancamento){
+        Revista revista = new Revista(proximoCodigo, titulo, autor,Genero.getGenero(genero), true, materias,dataLancamento);
+        return cadastrar(revista);
+    }
+    public boolean cadastrarDisco(String titulo,String autor, int genero, int duracao, String formato ){
+        Disco disco = new Disco(proximoCodigo, titulo, autor,Genero.getGenero(genero), true, duracao, formato);
+        return cadastrar(disco);
     }
     public boolean emprestar(int codigo){
         Midia midia = pesquisar(codigo);
@@ -97,25 +105,57 @@ public class Biblioteca {
             return true;
         }
     }
+    private void editar(Midia midia, String novoTitulo, String novoAutor, int novoGenero){
+
+        if(novoTitulo != null && !novoTitulo.equals("")){
+            midia.setTitulo(novoTitulo);
+        }
+        if(novoAutor != null && !novoAutor.equals("")){
+            midia.setAutor(novoAutor);
+        }
+        if(novoGenero != 0){
+            midia.setGenero(Genero.getGenero(novoGenero));
+        }
+    }
     public boolean editarLivro(int codigo, String novoTitulo, String novoAutor, int novoGenero, int novaPaginas, String novaEditora){
         Livro livro = (Livro)pesquisar(codigo);
         if(livro == null){
             return false;
         }
-        if(novoTitulo != null && !novoTitulo.equals("")){
-            livro.setTitulo(novoTitulo);
-        }
-        if(novoAutor != null && !novoAutor.equals("")){
-            livro.setAutor(novoAutor);
-        }
-        if(novoGenero != 0){
-            livro.setGenero(converterGenero(novoGenero));
-        }
         if(novaPaginas != 0){
             livro.setPaginas(novaPaginas);
         }
+        editar(livro, novoTitulo, novoAutor, novoGenero);
         if(novaEditora != null && !novaEditora.equals("")){
             livro.setEditora(novaEditora);
+        }
+        return true;
+    }
+    public boolean editarRevista(int codigo, String novoTitulo, String novoAutor, int novoGenero, String novaMaterias, String novaDataLancamento){
+        Revista revista = (Revista)pesquisar(codigo);
+        if(revista == null){
+            return false;
+        }
+        editar(revista, novoTitulo, novoAutor, novoGenero);
+        if(novaMaterias != null && !novaMaterias.equals("")){
+            revista.setMaterias(novaMaterias);
+        }
+        if(novaDataLancamento != null && !novaDataLancamento.equals("")){
+            revista.setDataLancamento(novaDataLancamento);
+        }
+        return true;
+    }
+     public boolean editarDisco(int codigo, String novoTitulo, String novoAutor, int novoGenero, int novaDuracao, String novoFormato){
+        Disco disco = (Disco)pesquisar(codigo);
+        if(disco == null){
+            return false;
+        }
+        editar(disco, novoTitulo, novoAutor, novoGenero);
+        if(novaDuracao != 0){
+            disco.setDuracao(novaDuracao);
+        }
+        if(novoFormato != null && !novoFormato.equals("")){
+            disco.setFormato(novoFormato);
         }
         return true;
     }

@@ -21,4 +21,17 @@ public class Revista extends Midia {
         this.materias = materias;
         this.dataLancamento = dataLancamento;
     }
+    
+    public void setMaterias(String materias){
+        this.materias = materias;
+    }
+    public void setDataLancamento(String dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+    
+    @Override
+    public String toString(){
+        String texto = super.toString();
+        return texto+ " - "+ this.dataLancamento;
+    }
 }

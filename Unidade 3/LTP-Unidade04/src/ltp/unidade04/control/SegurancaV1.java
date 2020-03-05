@@ -9,11 +9,12 @@ package ltp.unidade04.control;
  *
  * @author Lucas Brum
  */
-public class Segurança {
+public class SegurancaV1  implements PadraoSeguranca {
     
     //admin/admin = Usuario administrador
     //useer/user = Usuario comum
-    public String autenticar(String usuario, String senha){
+    @Override
+    public String autenticar(String usuario, String senha) throws SegurancaException{
         if (usuario.equals("admin") && senha.equals("admin")){
             return "admin";
         }
@@ -21,9 +22,10 @@ public class Segurança {
             return "user";
         }
         else{
-            return null;
+            throw new SegurancaException(usuario);
         }
     }
+    @Override
     public boolean autorizar(String usuario, int opcao){
         switch(opcao){
             case 1:

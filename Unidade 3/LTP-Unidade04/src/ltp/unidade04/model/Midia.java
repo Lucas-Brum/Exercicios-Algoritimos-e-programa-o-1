@@ -49,4 +49,14 @@ public abstract class Midia {
      public void setGenero(String genero){
         this.genero = genero;
     }
+     
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null) return false;
+        return this.codigo ==  ((Midia)obj).codigo;
+    }
+    @Override
+    public String toString(){
+        return this.codigo + " - "+ this.titulo+ " - "+ (this.disponivel ? "Disp":"Indisp");
+    }
 }
