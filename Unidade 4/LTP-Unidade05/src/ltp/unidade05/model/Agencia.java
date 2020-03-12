@@ -25,17 +25,44 @@ public class Agencia {
         return this.numero;
     }
     
-    public boolean autenticarCliente(int numeroConta, String senha){
-        Conta conta = null;
+    public Conta buscarConta(int numeroConta) throws BancoException{
         for(int i = 0; i < contas.length; i++){
             if(contas[i] != null && contas[i].getNumero() == numeroConta){
-                conta = contas[i];
-                break;
+                return contas[i];
             }
         }
-        if(conta == null) return false;
+        throw new BancoException(numeroConta, "Conta invalida");
+    }
+    
+    public boolean depositar(int numeroConta, double valor) throws BancoException{
+        Conta conta = buscarConta(numeroConta);
+        return conta.depositar(valor);
+    }
+    public boolean transferir(int contaOrigem,Conta contaDestino , double valor) throws BancoException {
+        Conta conta = buscarConta(contaOrigem);
+        return conta.transferir(contaDestino, valor);
+    }
+    
+    public boolean sacar(int numeroConta, double valor) throws BancoException{
+        Conta conta = buscarConta(numeroConta);
+        return conta.sacar(valor);
+    }
+    
+    public Conta autenticarCliente(int numeroConta, String senha){
+
         
-        return conta.autenticar(senha);
+        try{
+            Conta conta = buscarConta(numeroConta);
+            boolean sucesso = conta.autenticar(senha);
+            if (sucesso)
+                return conta;
+            else
+                return null;
+        }
+        catch(BancoException bex){
+            return null;
+        }
+
     }
     
     public boolean  cadastrarConta(int tipo,String titular, String senha) throws BancoException{

@@ -133,7 +133,7 @@ public class FrmLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEntrar1)
+                .addComponent(btnEntrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -156,8 +156,10 @@ public class FrmLogin extends javax.swing.JFrame {
         int conta = Integer.parseInt(txtNumeroConta.getText());
         String senha = txtSenha.getText();
         
-        if(Principal.banco.autenticarCliente(agencia, conta, senha))
+        if(Principal.banco.autenticarCliente(agencia, conta, senha)){
             new FrmIndex().setVisible(true);
+            
+        }
         else
            JOptionPane.showMessageDialog(this, "Dados invalidos tente novamente.");
     }//GEN-LAST:event_btnEntrar1ActionPerformed

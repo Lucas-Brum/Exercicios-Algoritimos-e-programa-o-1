@@ -20,6 +20,7 @@ public class ContaPoupanca extends Conta {
     
     public ContaPoupanca(String titular, int numero, String senha) throws BancoException{
         super(titular, numero, senha);
+        this.saldo = SALDO_INICIAL;
     }
    
     

@@ -30,9 +30,12 @@ public abstract class Conta {
     }
     public Conta(String titular, int numero, String senha) throws BancoException{
         this();
-        this.titular = senha;
+        this.titular = titular;
         this.numero = numero;
         this.senha = senha;
+    }
+    public  double getSaldo(){
+        return this.saldo;
     }
     
     public boolean autenticar(String senha){
@@ -65,7 +68,7 @@ public abstract class Conta {
     public boolean depositar(double valor) throws BancoException{
         if(valor<=0) throw new BancoException(this.numero,"O valor para depositar é invalido.");
         
-        this.saldo += saldo;
+        this.saldo += valor;
         return true;
     }
     
@@ -102,6 +105,7 @@ public abstract class Conta {
             throw new BancoException(this.numero,"Não´há saldo suficiante para concluir a operação.");          
         return true;
     }
+    
     
     public boolean sacar (double valor) throws BancoException {
         if(!verificarSaldoSaque(valor) || !verificarLimiteSaque(valor)){
